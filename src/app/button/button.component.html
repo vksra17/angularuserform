@@ -1,0 +1,30 @@
+<form class="example-form" [formGroup]="userform">
+    <h1 style="align-items:center; justify-content:center">Add New Data
+        <mat-icon >cross</mat-icon>
+    </h1>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Telephone</mat-label>
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" matInput placeholder="" formControlName="number">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Level</mat-label>
+        <mat-select  multiple formControlName="select" >
+            <mat-option value="Fresher">Fresher</mat-option>
+            <mat-option value="Experience">Experience</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button type="submit" value="submit" (click)="afterSave()">{{actionBtn}}</button>
+      </mat-dialog-actions>
+</form>
